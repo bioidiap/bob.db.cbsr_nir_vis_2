@@ -53,7 +53,7 @@ setup(
 
       # declare tests to bob
       'bob.test': [
-        'voxforge = xbob.db.voxforge.test:voxforgeDatabaseTest',
+        'voxforge = xbob.db.voxforge.test:VoxforgeDatabaseTest',
         ],
       },
 
