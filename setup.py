@@ -45,6 +45,18 @@ setup(
       'xbob.db',
     ],
 
+    entry_points = {
+      # declare database to bob
+      #'bob.db': [
+      #  'subvoxforge = xbob.db.subvoxforge.driver:Interface',
+      #  ],
+
+      # declare tests to bob
+      'bob.test': [
+        'subvoxforge = xbob.db.subvoxforge.test:SubvoxforgeDatabaseTest',
+        ],
+      },
+
     classifiers = [
       'Development Status :: 4 - Beta',
       'Intended Audience :: Education',
