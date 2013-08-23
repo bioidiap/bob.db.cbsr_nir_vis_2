@@ -58,7 +58,7 @@ This also requires that bob (>= 1.2.0) is installed.
 Getting the data
 ~~~~~~~~~~~~~~~~
 
-The data can be downloaded and extracted by running that takes as input the location in which the data will be downloaded::
+The data can be downloaded and extracted by running `download_and_untar.sh` that takes as input the location in which the data will be downloaded::
 
   $ ./download_and_untar.sh PATH/TO/WAV/DIRECTORY
 
