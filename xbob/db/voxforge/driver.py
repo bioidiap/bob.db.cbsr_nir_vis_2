@@ -17,7 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""Commands the Subvoxforge database can respond to.
+"""Commands the Voxforge database can respond to.
 """
 
 import os
@@ -77,7 +77,7 @@ def checkfiles(args):
 class Interface(BaseInterface):
 
   def name(self):
-    return 'subvoxforge'
+    return 'voxforge'
 
   def version(self):
     import pkg_resources # part of setuptools
@@ -94,7 +94,7 @@ class Interface(BaseInterface):
     from . import __doc__ as docs
 
     subparsers = self.setup_parser(parser,
-        "Subvoxforge database", docs)
+        "Voxforge database", docs)
 
     import argparse
 

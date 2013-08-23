@@ -21,10 +21,10 @@ from setuptools import setup, find_packages
 
 setup(
 
-    name='xbob.db.subvoxforge',
+    name='xbob.db.voxforge',
     version='0.0.1a0',
     description='Speaker verification protocol on a subset of the VoxForge database',
-    url='http://pypi.python.org/pypi/xbob.db.subvoxforge',
+    url='http://pypi.python.org/pypi/xbob.db.voxforge',
     license='GPLv3',
     author='Elie Khoury',
     author_email='Elie.Khoury@idiap.ch',
@@ -48,12 +48,12 @@ setup(
     entry_points = {
       # declare database to bob
       'bob.db': [
-        'subvoxforge = xbob.db.subvoxforge.driver:Interface',
+        'voxforge = xbob.db.voxforge.driver:Interface',
         ],
 
       # declare tests to bob
       'bob.test': [
-        'subvoxforge = xbob.db.subvoxforge.test:SubvoxforgeDatabaseTest',
+        'voxforge = xbob.db.voxforge.test:voxforgeDatabaseTest',
         ],
       },
 

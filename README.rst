@@ -42,9 +42,9 @@ Installation
 
 Just download this package and uncompressed it locally::
 
-  $ wget http://pypi.python.org/packages/source/x/xbob.subvoxforge/xbob.db.subvoxforge-0.0.1.zip
-  $ unzip xbob.db.subvoxforge-0.0.1.zip
-  $ cd xbob.db.subvoxforge
+  $ wget http://pypi.python.org/packages/source/x/xbob.voxforge/xbob.db.voxforge-0.0.1.zip
+  $ unzip xbob.db.voxforge-0.0.1.zip
+  $ cd xbob.db.voxforge
 
 Use buildout to bootstrap and have a working environment ready for
 experiments::
@@ -65,4 +65,4 @@ The data can be downloaded from its original URL (on Voxforge) and extracted by 
 .. _Voxforge: http://www.voxforge.org/
 .. _xbob.speaker_recognition: https://github.com/bioidiap/xbob.speaker_recognition
 .. _NIST SRE 2012 evaluation: http://www.nist.gov/itl/iad/mig/sre12.cfm
-.. _download_and_untar.sh: https://github.com/bioidiap/xbob.db.subvoxforge/blob/master/download_and_untar.sh
+.. _download_and_untar.sh: https://github.com/bioidiap/xbob.db.voxforge/blob/master/download_and_untar.sh
