@@ -23,6 +23,7 @@ http://www.voxforge.org/
 """
 
 from .query import Database
+from xbob.db.verification.filelist.models import File, Client
 
 __all__ = dir()
 

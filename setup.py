@@ -47,9 +47,9 @@ setup(
 
     entry_points = {
       # declare database to bob
-      #'bob.db': [
-      #  'subvoxforge = xbob.db.subvoxforge.driver:Interface',
-      #  ],
+      'bob.db': [
+        'subvoxforge = xbob.db.subvoxforge.driver:Interface',
+        ],
 
       # declare tests to bob
       'bob.test': [
