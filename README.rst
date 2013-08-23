@@ -58,10 +58,11 @@ This also requires that bob (>= 1.2.0) is installed.
 Getting the data
 ~~~~~~~~~~~~~~~~
 
-The data can be downloaded and extracted by running `download_and_untar.sh` that takes as input the location in which the data will be downloaded::
+The data can be downloaded and extracted by running `download_and_untar.sh`_ that takes as input the location in which the data will be downloaded::
 
   $ ./download_and_untar.sh PATH/TO/WAV/DIRECTORY
 
 .. _Voxforge: http://www.voxforge.org/
 .. _xbob.speaker_recognition: https://github.com/bioidiap/xbob.speaker_recognition
 .. _NIST SRE 2012 evaluation: http://www.nist.gov/itl/iad/mig/sre12.cfm
+.. _download_and_untar.sh: https://github.com/bioidiap/xbob.db.subvoxforge/blob/master/download_and_untar.sh
