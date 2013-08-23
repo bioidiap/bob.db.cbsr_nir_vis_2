@@ -26,5 +26,7 @@ class Database(xbob.db.verification.filelist.Database):
 
   def __init__(self):
     # call base class constructor
-    xbob.db.verification.filelist.Database.__init__(self, 'lists')
+    from pkg_resources import resource_filename
+    lists = resource_filename(__name__, 'lists')
+    xbob.db.verification.filelist.Database.__init__(self, lists)
     
