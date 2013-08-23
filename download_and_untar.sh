@@ -39,5 +39,5 @@ while read filename; do
     mv $basefilename $directory/.
     rm $filename
   fi
-done < xbob/db/subvoxforge/list_of_tgz_files.lst # where the list of files is stored
+done < xbob/db/subvoxforge/lists/list_of_tgz_files.lst # where the list of files is stored
 

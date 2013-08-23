@@ -21,11 +21,10 @@ import xbob.db.verification.filelist
 
 class Database(xbob.db.verification.filelist.Database):
   """Wrapper class for the subVoxforge database for speaker recognition (http://www.voxforge.org/).
-This class defines a simple protocol for training, dev and and by splitting the audio files of the database in three main parts.
-"""
+  this class defines a simple protocol for training, dev and and by splitting the audio files of the database in three main parts.
+  """
 
   def __init__(self):
     # call base class constructor
     xbob.db.verification.filelist.Database.__init__(self, 'lists')
     
-

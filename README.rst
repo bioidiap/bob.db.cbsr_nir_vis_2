@@ -1,5 +1,5 @@
-Bob satellite package for speaker recognition protocol using Voxforge Database 
-==============================================================================
+Speaker recognition protocol on the Voxforge Database 
+=====================================================
 
 `Voxforge`_ offers a collection transcribed speech for use with **Free** and **Open Source Speech Recognition Engines**. 
 In this package, we design a speaker recognition protocol that uses a subset of the **english audio files** (only 6561 files) belonging to **30 speakers**.
