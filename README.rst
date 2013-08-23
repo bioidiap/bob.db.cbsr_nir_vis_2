@@ -5,7 +5,7 @@ Speaker recognition protocol on the Voxforge Database
 In this package, we design a speaker recognition protocol that uses a subset of the **english audio files** (only 6561 files) belonging to **30 speakers**.
 This subset is splitted into three equivalent parts: Training (10 speakers), Development (10 speakers) and Test (10 speakers) sets.
  
-This package serves as an example of speaker recognition database while testing `xbob.speaker_recognition`_.
+This package serves as a toy example of speaker recognition database while testing `xbob.speaker_recognition`_.
 
 The `xbob.speaker_recognition`_  is developed at Idiap during its participation to the `NIST SRE 2012 evaluation`_. If you use this package and/or its results, please cite the following
 publications:
