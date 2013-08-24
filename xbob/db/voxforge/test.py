@@ -24,7 +24,7 @@ import os, sys
 import unittest
 from .query import Database
 
-class SubvoxforgeDatabaseTest(unittest.TestCase):
+class VoxforgeDatabaseTest(unittest.TestCase):
   """Performs various tests on the protocols of a subset of the VoxForge database."""
 
   def test01_query(self):
