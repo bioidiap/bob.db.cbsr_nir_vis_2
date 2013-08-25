@@ -2,8 +2,8 @@ Speaker recognition protocol on the Voxforge Database
 =====================================================
 
 `Voxforge`_ offers a collection transcribed speech for use with **Free** and **Open Source Speech Recognition Engines**. 
-In this package, we design a speaker recognition protocol that uses a subset of the **english audio files** (only 6561 files) belonging to **30 speakers**.
-This subset is splitted into three equivalent parts: Training (10 speakers), Development (10 speakers) and Test (10 speakers) sets.
+In this package, we design a speaker recognition protocol that uses a **small subset of the english audio files** (only 6561 files) belonging to **30 speakers** randomly selected.
+This subset is split into three equivalent parts: Training (10 speakers), Development (10 speakers) and Test (10 speakers) sets.
  
 This package serves as a toy example of speaker recognition database while testing `xbob.speaker_recognition`_.
 
@@ -40,7 +40,7 @@ publications:
 Installation
 ------------
 
-Just download this package and uncompressed it locally::
+Just download this package and decompress it locally::
 
   $ wget http://pypi.python.org/packages/source/x/xbob.voxforge/xbob.db.voxforge-0.0.1.zip
   $ unzip xbob.db.voxforge-0.0.1.zip
