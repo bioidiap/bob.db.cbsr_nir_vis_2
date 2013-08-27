@@ -42,8 +42,8 @@ Installation
 
 Just download this package and decompress it locally::
 
-  $ wget http://pypi.python.org/packages/source/x/xbob.voxforge/xbob.db.voxforge-0.0.1.zip
-  $ unzip xbob.db.voxforge-0.0.1.zip
+  $ wget http://pypi.python.org/packages/source/x/xbob.voxforge/xbob.db.voxforge-0.0.1a0.zip
+  $ unzip xbob.db.voxforge-0.0.1a0.zip
   $ cd xbob.db.voxforge
 
 Use buildout to bootstrap and have a working environment ready for
