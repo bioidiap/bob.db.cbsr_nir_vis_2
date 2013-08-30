@@ -5,9 +5,9 @@ Speaker recognition protocol on the Voxforge Database
 In this package, we design a speaker recognition protocol that uses a **small subset of the english audio files** (only 6561 files) belonging to **30 speakers** randomly selected.
 This subset is split into three equivalent parts: Training (10 speakers), Development (10 speakers) and Test (10 speakers) sets.
  
-This package serves as a toy example of speaker recognition database while testing `xbob.speaker_recognition`_.
+This package serves as a toy example of speaker recognition database while testing `xbob.spkrec`_.
 
-The `xbob.speaker_recognition`_  is developed at Idiap during its participation to the `NIST SRE 2012 evaluation`_. If you use this package and/or its results, please cite the following
+The `xbob.spkrec`_  is developed at Idiap during its participation to the `NIST SRE 2012 evaluation`_. If you use this package and/or its results, please cite the following
 publications:
 
 1. The original paper presented at the NIST SRE 2012 workshop::
@@ -42,7 +42,7 @@ Installation
 
 Just download this package and decompress it locally::
 
-  $ wget http://pypi.python.org/packages/source/x/xbob.voxforge/xbob.db.voxforge-0.0.1a0.zip
+  $ wget http://pypi.python.org/packages/source/x/xbob.db.voxforge/xbob.db.voxforge-0.0.1a0.zip
   $ unzip xbob.db.voxforge-0.0.1a0.zip
   $ cd xbob.db.voxforge
 
@@ -63,6 +63,6 @@ The data can be downloaded from its original URL (on Voxforge) and extracted by 
   $ ./download_and_untar.sh PATH/TO/WAV/DIRECTORY
 
 .. _Voxforge: http://www.voxforge.org/
-.. _xbob.speaker_recognition: https://github.com/bioidiap/xbob.speaker_recognition
+.. _xbob.spkrec: https://github.com/bioidiap/xbob.spkrec
 .. _NIST SRE 2012 evaluation: http://www.nist.gov/itl/iad/mig/sre12.cfm
 .. _download_and_untar.sh: https://github.com/bioidiap/xbob.db.voxforge/blob/master/download_and_untar.sh
