@@ -66,3 +66,5 @@ The data can be downloaded from its original URL (on Voxforge) and extracted by 
 .. _xbob.spkrec: https://github.com/bioidiap/xbob.spkrec
 .. _NIST SRE 2012 evaluation: http://www.nist.gov/itl/iad/mig/sre12.cfm
 .. _download_and_untar.sh: https://github.com/bioidiap/xbob.db.voxforge/blob/master/download_and_untar.sh
+
+In case you need a help, please contact us.
