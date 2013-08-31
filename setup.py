@@ -22,7 +22,7 @@ from setuptools import setup, find_packages
 setup(
 
     name='xbob.db.voxforge',
-    version='0.0.1a1',
+    version='0.0.1a2',
     description='Speaker verification protocol on a subset of the VoxForge database',
     url='http://pypi.python.org/pypi/xbob.db.voxforge',
     license='GPLv3',
