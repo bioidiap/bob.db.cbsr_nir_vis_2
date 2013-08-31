@@ -26,6 +26,7 @@ setup(
     description='Speaker verification protocol on a subset of the VoxForge database',
     url='http://pypi.python.org/pypi/xbob.db.voxforge',
     license='GPLv3',
+    keywords = "Speaker Recognition, Speaker verification, Gaussian Mixture Model, ISV, UBM-GMM, I-Vector, Audio processing, Database, Voxforge",
     author='Elie Khoury',
     author_email='Elie.Khoury@idiap.ch',
     long_description=open('README.rst').read(),
