@@ -3,7 +3,7 @@
 # Laurent El Shafey <Laurent.El-Shafey@idiap.ch>
 # Fri Aug 23 12:32:01 CEST 2013
 #
-# Copyright (C) 2011-2013 Idiap Research Institute, Martigny, Switzerland
+# Copyright (C) 2011-2014 Idiap Research Institute, Martigny, Switzerland
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@ from setuptools import setup, find_packages
 setup(
 
     name='xbob.db.voxforge',
-    version='0.0.1a2',
+    version='0.1.0',
     description='Speaker verification protocol on a subset of the VoxForge database',
     url='http://pypi.python.org/pypi/xbob.db.voxforge',
     license='GPLv3',

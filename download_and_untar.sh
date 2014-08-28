@@ -26,10 +26,9 @@ if [ "$#" -ne 1 ]; then
 fi
 
 baselink="http://www.repository.voxforge1.org/downloads/SpeechCorpus/Trunk/Audio/Main/16kHz_16bit"
-
 directory=$1
 
-mkdir -p $directory
+mkdir -p $fulldirectory
 while read filename; do
   basefilename=`basename $filename .tgz`
   echo $basefilename
