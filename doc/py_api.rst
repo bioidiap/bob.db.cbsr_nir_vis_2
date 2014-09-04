@@ -6,4 +6,4 @@
  BANCA Database
 ================
 
-.. automodule:: bob.db.banca
+.. automodule:: bob.db.voxforge
