@@ -17,7 +17,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-# This script will download the audio files used in the protocol. 
+# This script will download the audio files used in the protocol.
 # It will first download the tgz files, and then decompress them.
 
 if [ "$#" -ne 1 ]; then
@@ -38,5 +38,5 @@ while read filename; do
     mv $basefilename $directory/.
     rm $filename
   fi
-done < xbob/db/voxforge/lists/list_of_tgz_files.lst # where the list of files is stored
+done < bob/db/voxforge/lists/list_of_tgz_files.lst # where the list of files is stored
 

@@ -21,12 +21,12 @@ from setuptools import setup, find_packages
 
 setup(
 
-    name='xbob.db.voxforge',
-    version='0.1.0',
+    name='bob.db.voxforge',
+    version='2.0.0a0',
     description='Speaker verification protocol on a subset of the VoxForge database',
-    url='http://pypi.python.org/pypi/xbob.db.voxforge',
+    url='http://pypi.python.org/pypi/bob.db.voxforge',
     license='GPLv3',
-    keywords = "Speaker Recognition, Speaker verification, Gaussian Mixture Model, ISV, UBM-GMM, I-Vector, Audio processing, Database, Voxforge",
+    keywords = "Speaker Recognition, Speaker verification, Audio processing, Database, Voxforge",
     author='Elie Khoury',
     author_email='Elie.Khoury@idiap.ch',
     long_description=open('README.rst').read(),
@@ -37,26 +37,20 @@ setup(
 
     install_requires=[
       'setuptools',
-      'bob',
-      'xbob.db.verification.filelist',
+      'bob.db.verification.filelist',
     ],
 
     namespace_packages = [
-      'xbob',
-      'xbob.db',
+      'bob',
+      'bob.db',
     ],
 
     entry_points = {
       # declare database to bob
       'bob.db': [
-        'voxforge = xbob.db.voxforge.driver:Interface',
-        ],
-
-      # declare tests to bob
-      'bob.test': [
-        'voxforge = xbob.db.voxforge.test:VoxforgeDatabaseTest',
-        ],
-      },
+        'voxforge = bob.db.voxforge.driver:Interface',
+      ],
+    },
 
     classifiers = [
       'Development Status :: 4 - Beta',
@@ -67,5 +61,5 @@ setup(
       'Programming Language :: Python :: 3',
       'Topic :: Scientific/Engineering :: Artificial Intelligence',
       'Topic :: Database :: Front-Ends',
-      ],
+    ],
 )
