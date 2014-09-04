@@ -1,10 +1,27 @@
-Speaker recognition protocol on the Voxforge Database 
-=====================================================
+.. vim: set fileencoding=utf-8 :
+.. Manuel Guenther <manuel.guenther@idiap.ch>
+.. Thu Sep  4 11:35:05 CEST 2014
 
-`Voxforge`_ offers a collection transcribed speech for use with **Free** and **Open Source Speech Recognition Engines**. 
+.. image:: https://travis-ci.org/bioidiap/bob.db.voxforge.svg?branch=master
+   :target: https://travis-ci.org/bioidiap/bob.db.voxforge
+.. image:: https://coveralls.io/repos/bioidiap/bob.db.voxforge/badge.png
+   :target: https://coveralls.io/r/bioidiap/bob.db.voxforge
+.. image:: http://img.shields.io/github/tag/bioidiap/bob.db.voxforge.png
+   :target: https://github.com/bioidiap/bob.db.voxforge
+.. image:: http://img.shields.io/pypi/v/bob.db.voxforge.png
+   :target: https://pypi.python.org/pypi/bob.db.voxforge
+.. image:: http://img.shields.io/pypi/dm/bob.db.voxforge.png
+   :target: https://pypi.python.org/pypi/bob.db.voxforge
+
+
+=======================================================
+ Speaker recognition protocol on the Voxforge Database
+=======================================================
+
+`Voxforge`_ offers a collection transcribed speech for use with **Free** and **Open Source Speech Recognition Engines**.
 In this package, we design a speaker recognition protocol that uses a **small subset of the english audio files** (only 6561 files) belonging to **30 speakers** randomly selected.
 This subset is split into three equivalent parts: Training (10 speakers), Development (10 speakers) and Test (10 speakers) sets.
- 
+
 This package serves as a toy example of speaker recognition database while testing `xbob.spkrec`_.
 
 The `xbob.spkrec`_  is developed at Idiap during its participation to the `NIST SRE 2012 evaluation`_. If you use this package and/or its results, please cite the following
