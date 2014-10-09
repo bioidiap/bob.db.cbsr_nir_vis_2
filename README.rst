@@ -2,55 +2,12 @@
 .. Manuel Guenther <manuel.guenther@idiap.ch>
 .. Thu Sep  4 11:35:05 CEST 2014
 
-.. image:: https://travis-ci.org/bioidiap/bob.db.voxforge.svg?branch=master
-   :target: https://travis-ci.org/bioidiap/bob.db.voxforge
-.. image:: https://coveralls.io/repos/bioidiap/bob.db.voxforge/badge.png
-   :target: https://coveralls.io/r/bioidiap/bob.db.voxforge
-.. image:: http://img.shields.io/github/tag/bioidiap/bob.db.voxforge.png
-   :target: https://github.com/bioidiap/bob.db.voxforge
-.. image:: http://img.shields.io/pypi/v/bob.db.voxforge.png
-   :target: https://pypi.python.org/pypi/bob.db.voxforge
-.. image:: http://img.shields.io/pypi/dm/bob.db.voxforge.png
-   :target: https://pypi.python.org/pypi/bob.db.voxforge
-
 
 =======================================================
- Speaker recognition protocol on the Voxforge Database
+ CASIA NIR-VIS 2.0 Face Database protocol
 =======================================================
 
-`Voxforge`_ offers a collection transcribed speech for use with **Free** and **Open Source Speech Recognition Engines**.
-In this package, we design a speaker recognition protocol that uses a **small subset of the english audio files** (only 6561 files) belonging to **30 speakers** randomly selected.
-This subset is split into three equivalent parts: Training (10 speakers), Development (10 speakers) and Test (10 speakers) sets.
-
-This package serves as a toy example of speaker recognition database while testing `xbob.spkrec`_.
-
-The `xbob.spkrec`_  is developed at Idiap during its participation to the `NIST SRE 2012 evaluation`_. If you use this package and/or its results, please cite the following
-publications:
-
-1. The original paper presented at the NIST SRE 2012 workshop::
-
-     @inproceedings{Khoury_NISTSRE_2012,
-       author = {Khoury, Elie and El Shafey, Laurent and Marcel, S{\'{e}}bastien},
-       month = {dec},
-       title = {The Idiap Speaker Recognition Evaluation System at NIST SRE 2012},
-       booktitle = {NIST Speaker Recognition Conference},
-       year = {2012},
-       location = {Orlando, USA},
-       organization = {NIST},
-       pdf = {http://publications.idiap.ch/downloads/papers/2012/Khoury_NISTSRE_2012.pdf}
-    }
-
-2. Bob as the core framework used to run the experiments::
-
-    @inproceedings{Anjos_ACMMM_2012,
-      author = {A. Anjos and L. El Shafey and R. Wallace and M. G\"unther and C. McCool and S. Marcel},
-      title = {Bob: a free signal processing and machine learning toolbox for researchers},
-      year = {2012},
-      month = oct,
-      booktitle = {20th ACM Conference on Multimedia Systems (ACMMM), Nara, Japan},
-      publisher = {ACM Press},
-      url = {http://publications.idiap.ch/downloads/papers/2012/Anjos_Bob_ACMMM12.pdf},
-    }
+Bla
 
 
 
@@ -59,9 +16,9 @@ Installation
 
 Just download this package and decompress it locally::
 
-  $ wget http://pypi.python.org/packages/source/x/xbob.db.voxforge/xbob.db.voxforge-0.0.1a2.zip
-  $ unzip xbob.db.voxforge-0.0.1a2.zip
-  $ cd xbob.db.voxforge-0.0.1a2
+  $ wget http://
+  $ unzip 
+  $ cd 
 
 Use buildout to bootstrap and have a working environment ready for
 experiments::
@@ -72,16 +29,33 @@ experiments::
 This also requires that bob (>= 1.2.0) is installed.
 
 
+Mapping between the CASIA files and our database files
+------------------------------------------------------
+
+norm -- train_world.lst = nir_train_dev.txt + vis_train_dev.txt
+
+dev ------ for_models.lst = vis_gallery_dev.txt
+       |-- for_probes.lst = nir_probe_dev.txt
+       |
+       |
+test1  |-- for_models.lst = vis_gallery_1.txt
+       |-- for_probes.lst = nir_probe_1.txt
+test2  |-- for_models.lst = vis_gallery_2.txt
+  .    |-- for_probes.lst = nir_probe_2.txt
+  .
+  .
+  .
+  .
+test10 |-- for_models.lst = vis_gallery_10.txt
+       |-- for_probes.lst = nir_probe_10.txt
+
+
+
+
+
 Getting the data
 ~~~~~~~~~~~~~~~~
 
-The data can be downloaded from its original URL (on Voxforge) and extracted by running `download_and_untar.sh`_ that takes as input the path in which the data will be stored::
-
-  $ ./download_and_untar.sh PATH/TO/WAV/DIRECTORY
-
-.. _Voxforge: http://www.voxforge.org/
-.. _xbob.spkrec: https://github.com/bioidiap/xbob.spkrec
-.. _NIST SRE 2012 evaluation: http://www.nist.gov/itl/iad/mig/sre12.cfm
-.. _download_and_untar.sh: https://github.com/bioidiap/xbob.db.voxforge/blob/master/download_and_untar.sh
+The data can be downloaded from in the following URL (http://www.cbsr.ia.ac.cn/english/NIR-VIS-2.0-Database.html)::
 
 In case you need a help, please contact us.

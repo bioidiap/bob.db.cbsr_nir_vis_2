@@ -21,14 +21,14 @@ from setuptools import setup, find_packages
 
 setup(
 
-    name='bob.db.voxforge',
-    version='2.0.0a0',
-    description='Speaker verification protocol on a subset of the VoxForge database',
-    url='http://pypi.python.org/pypi/bob.db.voxforge',
+    name='bob.db.cbsr_nir_vis_2',
+    version='0.0.0a1',
+    description='CASIA NIR-VIS 2.0 Face Database protocol',
+    url='',
     license='GPLv3',
-    keywords = "Speaker Recognition, Speaker verification, Audio processing, Database, Voxforge",
-    author='Elie Khoury',
-    author_email='Elie.Khoury@idiap.ch',
+    keywords = "",
+    author='Tiago de Freitas Pereira',
+    author_email='tiago.pereira@idiap.ch',
     long_description=open('README.rst').read(),
 
     packages=find_packages(),
@@ -48,7 +48,7 @@ setup(
     entry_points = {
       # declare database to bob
       'bob.db': [
-        'voxforge = bob.db.voxforge.driver:Interface',
+        'cbsr_nir_vis_2 = bob.db.cbsr_nir_vis_2.driver:Interface',
       ],
     },
 
