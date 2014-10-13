@@ -24,9 +24,9 @@ class Database(bob.db.verification.filelist.Database):
   this class defines a simple protocol for training, dev and and by splitting the audio files of the database in three main parts.
   """
 
-  def __init__(self, original_directory = None, original_extension = None):
+  def __init__(self, original_directory = None, original_extension = None, annotation_directory=None):
     # call base class constructor
     from pkg_resources import resource_filename
     lists = resource_filename(__name__, 'lists')
-    bob.db.verification.filelist.Database.__init__(self, lists, original_directory = original_directory, original_extension = original_extension)
+    bob.db.verification.filelist.Database.__init__(self, lists, original_directory = original_directory, original_extension = original_extension, annotation_directory=None)
 
