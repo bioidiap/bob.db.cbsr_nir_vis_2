@@ -28,5 +28,5 @@ class Database(bob.db.verification.filelist.Database):
     # call base class constructor
     from pkg_resources import resource_filename
     lists = resource_filename(__name__, 'lists')
-    bob.db.verification.filelist.Database.__init__(self, lists, original_directory = original_directory, original_extension = original_extension, annotation_directory=None)
+    bob.db.verification.filelist.Database.__init__(self, lists, original_directory = original_directory, original_extension = original_extension, annotation_directory=annotation_directory)
 
