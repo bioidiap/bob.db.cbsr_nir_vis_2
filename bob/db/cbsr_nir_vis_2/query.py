@@ -30,3 +30,13 @@ class Database(bob.db.verification.filelist.Database):
     lists = resource_filename(__name__, 'lists')
     bob.db.verification.filelist.Database.__init__(self, lists, original_directory = original_directory, original_extension = original_extension, annotation_directory=annotation_directory)
 
+
+  def tobjects(self, protocol=None, model_ids=None, groups=None):
+    #No TObjects    
+    return []
+
+
+  def zobjects(self, protocol=None, groups=None):
+    #No TObjects    
+    return []
+
