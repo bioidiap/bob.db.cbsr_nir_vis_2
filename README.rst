@@ -4,7 +4,7 @@
 
 
 =======================================================
- CASIA NIR-VIS 2.0 Face Database protocol
+ CASIA NIR-VIS 2.0 Face Database
 =======================================================
 
 This package contains the access API and descriptions for the `CASIA NIR-VIS 2.0 database <http://www.cbsr.ia.ac.cn/english/NIR-VIS-2.0-Database.html>`. 
