@@ -70,8 +70,8 @@ lines::
   auto-checkout = *
   eggs = bob
          ...
-         xbob.db.cbsr_nir_vis_2
+         bob.db.cbsr_nir_vis_2
 
   [sources]
-  bob.db.cbsr_nir_vis_2 = git https://github.com/bioidiap/xbob.db.cbsr_nir_vis_2.git
+  bob.db.cbsr_nir_vis_2 = git https://github.com/bioidiap/bob.db.cbsr_nir_vis_2.git
   ...
