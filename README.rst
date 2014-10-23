@@ -68,9 +68,7 @@ lines::
   ...
   extensions = mr.developer
   auto-checkout = *
-  eggs = bob
-         ...
-         bob.db.cbsr_nir_vis_2
+  eggs = bob.db.cbsr_nir_vis_2
 
   [sources]
   bob.db.cbsr_nir_vis_2 = git https://github.com/bioidiap/bob.db.cbsr_nir_vis_2.git
