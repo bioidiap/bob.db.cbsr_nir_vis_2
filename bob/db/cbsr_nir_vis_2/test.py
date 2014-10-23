@@ -22,6 +22,51 @@
 
 import bob.db.cbsr_nir_vis_2
 
-def test01():
-  assert True
+possible_protocols  = ["view2_1", "view2_2", "view2_3", "view2_4", "view2_5", "view2_6", "view2_7", "view2_8", "view2_9", "view2_10"]
+
+def test_protocols():
+  import os
+
+  db = bob.db.cbsr_nir_vis_2.Database()
+  available_protocols = os.listdir(db.get_base_directory())
+
+  for p in possible_protocols:
+    assert p  in available_protocols
+
+
+def test_clients():
+
+  db = bob.db.cbsr_nir_vis_2.Database()
+  for p in possible_protocols:
+
+    #Checking clients
+    assert len(db.client_ids(protocol=p)) == 715
+    assert len(db.client_ids(protocol=p, groups="world")) == 357
+    assert len(db.client_ids(protocol=p, groups="dev")) == 358
+    assert len(db.client_ids(protocol=p, groups="eval")) == 358
+
+
+def test_objects():
+
+  db = bob.db.cbsr_nir_vis_2.Database()
+  for p in possible_protocols:
+
+    #Checking groups
+    assert len(db.groups(protocol=p)) == 3
+
+    #cheking files
+    assert len(db.objects(protocol=p))== 15371
+    assert len(db.objects(protocol=p, groups="world"))== 8750
+    assert len(db.objects(protocol=p, groups="dev"))== 6481
+    assert len(db.objects(protocol=p, groups="eval"))== 6566
+
+    assert len(db.objects(protocol=p, groups="dev", purposes="enrol"))== 358
+    assert len(db.objects(protocol=p, groups="dev", purposes="probe"))== 6123
+
+    assert len(db.objects(protocol=p, groups="eval", purposes="enrol"))== 358
+    assert len(db.objects(protocol=p, groups="eval", purposes="probe"))== 6208
+
+
+
+    
 
