@@ -1,5 +1,5 @@
 .. vim: set fileencoding=utf-8 :
-.. Manuel Guenther <manuel.guenther@idiap.ch>
+.. Tiago de Freitas Pereira <tiago.pereira@idiap.ch>
 .. Thu Sep  4 11:35:05 CEST 2014
 
 
@@ -7,55 +7,71 @@
  CASIA NIR-VIS 2.0 Face Database protocol
 =======================================================
 
-Bla
+This package contains the access API and descriptions for the `CASIA NIR-VIS 2.0 database <http://www.cbsr.ia.ac.cn/english/NIR-VIS-2.0-Database.html>`. 
+The actual raw data for the database should be downloaded from the original URL. 
+This package only contains the Bob accessor methods to use the DB directly from python, with the original protocol of the database.
 
+CASIA NIR-VIS 2.0 database offers pairs of mugshot images and their correspondent NIR photos.
+Capured by CASIA (Chinese Academy of Sciences), the images of this database were collected in four recording sessions: 2007 spring, 2009 summer, 2009 fall and 2010 summer, in which the first session is identical to the `HFB database <http://www.cbsr.ia.ac.cn/english/HFB%20Databases.asp>`. 
+The CASIA NIR-VIS 2.0 database consists of 725 subjects in total. 
+There are 1-22 VIS and 5-50 NIR face images per subject.
 
+You would normally not install this package unless you are maintaining it. 
+What you would do instead is to tie it in at the package you need to **use** it.
+There are a few ways to achieve this:
 
-Installation
-------------
+1. You can add this package as a requirement at the ``setup.py`` for your own
+   `satellite package
+   <https://github.com/idiap/bob/wiki/Virtual-Work-Environments-with-Buildout>`_
+   or to your Buildout ``.cfg`` file, if you prefer it that way. With this
+   method, this package gets automatically downloaded and installed on your
+   working environment, or
 
-Just download this package and decompress it locally::
+2. You can manually download and install this package using commands like
+   ``easy_install`` or ``pip``.
 
-  $ wget http://
-  $ unzip 
-  $ cd 
+The package is available in two different distribution formats:
 
-Use buildout to bootstrap and have a working environment ready for
-experiments::
+1. You can download it from `PyPI <http://pypi.python.org/pypi>`_, or
 
-  $ python bootstrap
-  $ ./bin/buildout
+2. You can download it in its source form from `its git repository
+   <https://github.com/bioidiap/bob.db.cbsr_nir_vis_2>`_.
 
-This also requires that bob (>= 1.2.0) is installed.
+You can mix and match points 1/2 and a/b above based on your requirements. Here
+are some examples:
 
+Modify your setup.py and download from PyPI
+===========================================
 
-Mapping between the CASIA files and our database files
-------------------------------------------------------
+That is the easiest. Edit your ``setup.py`` in your satellite package and add
+the following entry in the ``install_requires`` section (note: ``...`` means
+`whatever extra stuff you may have in-between`, don't put that on your
+script)::
 
-norm -- train_world.lst = nir_train_dev.txt + vis_train_dev.txt
+    install_requires=[
+      ...
+      "bob.db.cbsr_nir_vis_2",
+    ],
 
-dev ------ for_models.lst = vis_gallery_dev.txt
-       |-- for_probes.lst = nir_probe_dev.txt
-       |
-       |
-test1  |-- for_models.lst = vis_gallery_1.txt
-       |-- for_probes.lst = nir_probe_1.txt
-test2  |-- for_models.lst = vis_gallery_2.txt
-  .    |-- for_probes.lst = nir_probe_2.txt
-  .
-  .
-  .
-  .
-test10 |-- for_models.lst = vis_gallery_10.txt
-       |-- for_probes.lst = nir_probe_10.txt
+Proceed normally with your ``boostrap/buildout`` steps and you should be all
+set. That means you can now import the ``bob.db.cbsr_nir_vis_2`` namespace into your scripts.
 
+Modify your buildout.cfg and download from git
+==============================================
 
+You will need to add a dependence to `mr.developer
+<http://pypi.python.org/pypi/mr.developer/>`_ to be able to install from our
+git repositories. Your ``buildout.cfg`` file should contain the following
+lines::
 
+  [buildout]
+  ...
+  extensions = mr.developer
+  auto-checkout = *
+  eggs = bob
+         ...
+         xbob.db.cbsr_nir_vis_2
 
-
-Getting the data
-~~~~~~~~~~~~~~~~
-
-The data can be downloaded from in the following URL (http://www.cbsr.ia.ac.cn/english/NIR-VIS-2.0-Database.html)::
-
-In case you need a help, please contact us.
+  [sources]
+  bob.db.cbsr_nir_vis_2 = git https://github.com/bioidiap/xbob.db.cbsr_nir_vis_2.git
+  ...
