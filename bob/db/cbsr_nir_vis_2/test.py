@@ -21,8 +21,8 @@
 """
 
 import bob.db.cbsr_nir_vis_2
-
 possible_protocols  = ["view2_1", "view2_2", "view2_3", "view2_4", "view2_5", "view2_6", "view2_7", "view2_8", "view2_9", "view2_10"]
+
 
 def test_protocols():
   import os
@@ -35,9 +35,8 @@ def test_protocols():
 
 
 def test_clients():
-
-  db = bob.db.cbsr_nir_vis_2.Database()
   for p in possible_protocols:
+    db = bob.db.cbsr_nir_vis_2.Database()
 
     #Checking clients
     assert len(db.client_ids(protocol=p)) == 715
@@ -49,24 +48,186 @@ def test_clients():
 def test_objects():
 
   db = bob.db.cbsr_nir_vis_2.Database()
-  for p in possible_protocols:
+  p = "view2_1"
+  #Checking groups
+  assert len(db.groups(protocol=p)) == 3
 
-    #Checking groups
-    assert len(db.groups(protocol=p)) == 3
+  #cheking files
+  assert len(db.objects(protocol=p))== 15371
+  assert len(db.objects(protocol=p, groups="world"))== 8750
+  assert len(db.objects(protocol=p, groups="dev"))== 6481
+  assert len(db.objects(protocol=p, groups="eval"))== 6566
 
-    #cheking files
-    assert len(db.objects(protocol=p))== 15371
-    assert len(db.objects(protocol=p, groups="world"))== 8750
-    assert len(db.objects(protocol=p, groups="dev"))== 6481
-    assert len(db.objects(protocol=p, groups="eval"))== 6566
+  assert len(db.objects(protocol=p, groups="dev", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="dev", purposes="probe"))== 6123
 
-    assert len(db.objects(protocol=p, groups="dev", purposes="enrol"))== 358
-    assert len(db.objects(protocol=p, groups="dev", purposes="probe"))== 6123
-
-    assert len(db.objects(protocol=p, groups="eval", purposes="enrol"))== 358
-    assert len(db.objects(protocol=p, groups="eval", purposes="probe"))== 6208
-
+  assert len(db.objects(protocol=p, groups="eval", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="eval", purposes="probe"))== 6208
 
 
-    
+  db = bob.db.cbsr_nir_vis_2.Database()
+  p = "view2_2"
+  #Checking groups
+  assert len(db.groups(protocol=p)) == 3
+
+  #cheking files 
+  assert len(db.objects(protocol=p))== 15387
+  assert len(db.objects(protocol=p, groups="world"))== 8750
+  assert len(db.objects(protocol=p, groups="dev"))== 6481
+  assert len(db.objects(protocol=p, groups="eval"))== 6590
+
+  assert len(db.objects(protocol=p, groups="dev", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="dev", purposes="probe"))== 6123
+
+  assert len(db.objects(protocol=p, groups="eval", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="eval", purposes="probe"))== 6232
+
+
+  db = bob.db.cbsr_nir_vis_2.Database()
+  p = "view2_3"
+  #Checking groups
+  assert len(db.groups(protocol=p)) == 3
+
+  #cheking files 
+  assert len(db.objects(protocol=p))== 15384
+  assert len(db.objects(protocol=p, groups="world"))== 8750
+  assert len(db.objects(protocol=p, groups="dev"))== 6481
+  assert len(db.objects(protocol=p, groups="eval"))== 6568
+
+  assert len(db.objects(protocol=p, groups="dev", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="dev", purposes="probe"))== 6123
+
+  assert len(db.objects(protocol=p, groups="eval", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="eval", purposes="probe"))== 6210
+
+
+  db = bob.db.cbsr_nir_vis_2.Database()
+  p = "view2_4"
+  #Checking groups
+  assert len(db.groups(protocol=p)) == 3
+
+  #cheking files 
+  assert len(db.objects(protocol=p))== 15379
+  assert len(db.objects(protocol=p, groups="world"))== 8750
+  assert len(db.objects(protocol=p, groups="dev"))== 6481
+  assert len(db.objects(protocol=p, groups="eval"))== 6413
+
+  assert len(db.objects(protocol=p, groups="dev", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="dev", purposes="probe"))== 6123
+
+  assert len(db.objects(protocol=p, groups="eval", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="eval", purposes="probe"))== 6055
+
+
+  db = bob.db.cbsr_nir_vis_2.Database()
+  p = "view2_5"
+  #Checking groups
+  assert len(db.groups(protocol=p)) == 3
+
+  #cheking files 
+  assert len(db.objects(protocol=p))== 15385
+  assert len(db.objects(protocol=p, groups="world"))== 8750
+  assert len(db.objects(protocol=p, groups="dev"))== 6481
+  assert len(db.objects(protocol=p, groups="eval"))== 6562
+
+  assert len(db.objects(protocol=p, groups="dev", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="dev", purposes="probe"))== 6123
+
+  assert len(db.objects(protocol=p, groups="eval", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="eval", purposes="probe"))== 6204
+
+
+  db = bob.db.cbsr_nir_vis_2.Database()
+  p = "view2_6"
+  #Checking groups
+  assert len(db.groups(protocol=p)) == 3
+
+  #cheking files 
+  assert len(db.objects(protocol=p))== 15383
+  assert len(db.objects(protocol=p, groups="world"))== 8750
+  assert len(db.objects(protocol=p, groups="dev"))== 6481
+  assert len(db.objects(protocol=p, groups="eval"))== 6549
+
+  assert len(db.objects(protocol=p, groups="dev", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="dev", purposes="probe"))== 6123
+
+  assert len(db.objects(protocol=p, groups="eval", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="eval", purposes="probe"))== 6191
+  
+
+  db = bob.db.cbsr_nir_vis_2.Database()
+  p = "view2_7"
+  #Checking groups
+  assert len(db.groups(protocol=p)) == 3
+
+  #cheking files 
+  assert len(db.objects(protocol=p))== 15381
+  assert len(db.objects(protocol=p, groups="world"))== 8750
+  assert len(db.objects(protocol=p, groups="dev"))== 6481
+  assert len(db.objects(protocol=p, groups="eval"))== 6605
+
+  assert len(db.objects(protocol=p, groups="dev", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="dev", purposes="probe"))== 6123
+
+  assert len(db.objects(protocol=p, groups="eval", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="eval", purposes="probe"))== 6247
+
+
+  db = bob.db.cbsr_nir_vis_2.Database()
+  p = "view2_8"
+  #Checking groups
+  assert len(db.groups(protocol=p)) == 3
+
+  #cheking files 
+  assert len(db.objects(protocol=p))== 15383
+  assert len(db.objects(protocol=p, groups="world"))== 8750
+  assert len(db.objects(protocol=p, groups="dev"))== 6481
+  assert len(db.objects(protocol=p, groups="eval"))== 6580
+
+  assert len(db.objects(protocol=p, groups="dev", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="dev", purposes="probe"))== 6123
+
+  assert len(db.objects(protocol=p, groups="eval", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="eval", purposes="probe"))== 6222
+
+
+  db = bob.db.cbsr_nir_vis_2.Database()
+  p = "view2_9"
+  #Checking groups
+  assert len(db.groups(protocol=p)) == 3
+
+  #cheking files 
+  assert len(db.objects(protocol=p))== 15388
+  assert len(db.objects(protocol=p, groups="world"))== 8750
+  assert len(db.objects(protocol=p, groups="dev"))== 6481
+  assert len(db.objects(protocol=p, groups="eval"))== 6520
+
+  assert len(db.objects(protocol=p, groups="dev", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="dev", purposes="probe"))== 6123
+
+  assert len(db.objects(protocol=p, groups="eval", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="eval", purposes="probe"))== 6162
+
+
+  db = bob.db.cbsr_nir_vis_2.Database()
+  p = "view2_10"
+  #Checking groups
+  assert len(db.groups(protocol=p)) == 3
+
+  #cheking files 
+  assert len(db.objects(protocol=p))== 15389
+  assert len(db.objects(protocol=p, groups="world"))== 8750
+  assert len(db.objects(protocol=p, groups="dev"))== 6481
+  assert len(db.objects(protocol=p, groups="eval"))== 6603
+
+  assert len(db.objects(protocol=p, groups="dev", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="dev", purposes="probe"))== 6123
+
+  assert len(db.objects(protocol=p, groups="eval", purposes="enrol"))== 358
+  assert len(db.objects(protocol=p, groups="eval", purposes="probe"))== 6245
+
+
+
+
+
 
