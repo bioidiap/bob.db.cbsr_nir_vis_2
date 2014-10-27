@@ -21,7 +21,7 @@ from setuptools import setup, find_packages
 
 setup(
 
-    name='bob.db.cbsr_nir_vis_2',
+    name='xbob.db.cbsr_nir_vis_2',
     version='0.0.0a1',
     description='CASIA NIR-VIS 2.0 Face Database protocol',
     url='',
@@ -37,18 +37,19 @@ setup(
 
     install_requires=[
       'setuptools',
-      'bob.db.verification.filelist',
+      'bob',
+      'xbob.db.verification.filelist',
     ],
 
     namespace_packages = [
-      'bob',
-      'bob.db',
+      'xbob',
+      'xbob.db',
     ],
 
     entry_points = {
       # declare database to bob
       'bob.db': [
-        'cbsr_nir_vis_2 = bob.db.cbsr_nir_vis_2.driver:Interface',
+        'cbsr_nir_vis_2 = xbob.db.cbsr_nir_vis_2.driver:Interface',
       ],
     },
 
