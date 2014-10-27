@@ -71,5 +71,5 @@ lines::
   eggs = xbob.db.cbsr_nir_vis_2
 
   [sources]
-  xbob.db.cbsr_nir_vis_2 = git https://github.com/bioidiap/xbob.db.cbsr_nir_vis_2.git -b bob_1.2
+  xbob.db.cbsr_nir_vis_2 = git https://github.com/bioidiap/xbob.db.cbsr_nir_vis_2.git branch= bob_1.2
   ...
