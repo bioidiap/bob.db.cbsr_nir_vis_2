@@ -35,7 +35,7 @@ The package is available in two different distribution formats:
 1. You can download it from `PyPI <http://pypi.python.org/pypi>`_, or
 
 2. You can download it in its source form from `its git repository
-   <https://github.com/bioidiap/bob.db.cbsr_nir_vis_2>`_.
+   <https://github.com/bioidiap/xbob.db.cbsr_nir_vis_2>`_.
 
 You can mix and match points 1/2 and a/b above based on your requirements. Here
 are some examples:
@@ -50,11 +50,11 @@ script)::
 
     install_requires=[
       ...
-      "bob.db.cbsr_nir_vis_2",
+      "xbob.db.cbsr_nir_vis_2",
     ],
 
 Proceed normally with your ``boostrap/buildout`` steps and you should be all
-set. That means you can now import the ``bob.db.cbsr_nir_vis_2`` namespace into your scripts.
+set. That means you can now import the ``xbob.db.cbsr_nir_vis_2`` namespace into your scripts.
 
 Modify your buildout.cfg and download from git
 ==============================================
@@ -68,8 +68,8 @@ lines::
   ...
   extensions = mr.developer
   auto-checkout = *
-  eggs = bob.db.cbsr_nir_vis_2
+  eggs = xbob.db.cbsr_nir_vis_2
 
   [sources]
-  bob.db.cbsr_nir_vis_2 = git https://github.com/bioidiap/bob.db.cbsr_nir_vis_2.git
+  xbob.db.cbsr_nir_vis_2 = git https://github.com/bioidiap/xbob.db.cbsr_nir_vis_2.git -b bob_1.2
   ...
