@@ -55,6 +55,7 @@ class Database(xbob.db.verification.filelist.Database):
     Return value
     The annotations as a dictionary: {'reye':(re_y,re_x), 'leye':(le_y,le_x)}
     """
+    import os
     if self.m_annotation_directory is None:
       return None
     # since the file id is equal to the file name, we can simply use it
