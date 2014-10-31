@@ -22,7 +22,7 @@ from setuptools import setup, find_packages
 setup(
 
     name='xbob.db.cbsr_nir_vis_2',
-    version='0.0.0a1',
+    version='1.0.0',
     description='CASIA NIR-VIS 2.0 Face Database protocol',
     url='',
     license='GPLv3',
