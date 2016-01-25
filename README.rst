@@ -7,7 +7,7 @@
 =================================
 
 This package contains the access API and descriptions for the `CASIA NIR-VIS
-2.0 database <http://www.cbsr.ia.ac.cn/english/NIR-VIS-2.0-Database.html>`.
+2.0 database <http://www.cbsr.ia.ac.cn/english/NIR-VIS-2.0-Database.html>`_.
 The actual raw data for the database should be downloaded from the original
 URL. This package only contains the Bob accessor methods to use the DB
 directly from python, with the original protocol of the database.
@@ -16,7 +16,7 @@ CASIA NIR-VIS 2.0 database offers pairs of mugshot images and their
 correspondent NIR photos. Capured by CASIA (Chinese Academy of Sciences), the
 images of this database were collected in four recording sessions: 2007 spring,
 2009 summer, 2009 fall and 2010 summer, in which the first session is identical
-to the `HFB database <http://www.cbsr.ia.ac.cn/english/HFB%20Databases.asp>`.
+to the `HFB database <http://www.cbsr.ia.ac.cn/english/HFB%20Databases.asp>`_.
 The CASIA NIR-VIS 2.0 database consists of 725 subjects in total. There are
 1-22 VIS and 5-50 NIR face images per subject.
 
