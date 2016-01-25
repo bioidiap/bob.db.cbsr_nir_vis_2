@@ -17,14 +17,22 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages, dist
+dist.Distribution(dict(setup_requires=['bob.extension']))
+
+from bob.extension.utils import load_requirements
+install_requires = load_requirements()
+
+# Define package version
+version = open("version.txt").read().rstrip()
+
 
 setup(
 
     name='bob.db.cbsr_nir_vis_2',
-    version='0.0.0a1',
+    version=version,
     description='CASIA NIR-VIS 2.0 Face Database protocol',
-    url='',
+    url='https://gitlab.idiap.ch/biometric/bob.db.cbsr_nir_vis_2',
     license='GPLv3',
     keywords = "",
     author='Tiago de Freitas Pereira',
@@ -35,24 +43,16 @@ setup(
     include_package_data=True,
     zip_safe = False,
 
-    install_requires=[
-      'setuptools',
-      'bob.db.verification.filelist',
-    ],
-
-    namespace_packages = [
-      'bob',
-      'bob.db',
-    ],
+    install_requires=install_requires,
 
     entry_points = {
-      # declare database to bob
       'bob.db': [
         'cbsr_nir_vis_2 = bob.db.cbsr_nir_vis_2.driver:Interface',
       ],
     },
 
     classifiers = [
+      'Framework :: Bob',
       'Development Status :: 4 - Beta',
       'Intended Audience :: Education',
       'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',

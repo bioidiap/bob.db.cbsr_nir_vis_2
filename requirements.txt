@@ -1,0 +1,2 @@
+setuptools
+bob.db.verification.filelist

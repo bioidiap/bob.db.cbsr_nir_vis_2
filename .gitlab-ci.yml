@@ -1,0 +1,87 @@
+py27-idiap:
+  script:
+    - git clean -ffdx
+    - export TMPDIR=/var/tmp
+    - python2.7 bootstrap-buildout.py
+    - ./bin/buildout
+    - unset TMPDIR
+    - ./bin/python --version
+    - export NOSE_WITH_COVERAGE=1
+    - export NOSE_COVER_PACKAGE=bob.db.cpqd
+    - ./bin/nosetests -sv
+  tags:
+    - lidiap2015
+
+py27-ubuntu-12.04:
+  script:
+    - git clean -ffdx
+    - python2.7 bootstrap-buildout.py
+    - ./bin/buildout
+    - ./bin/python --version
+    - export NOSE_WITH_COVERAGE=1
+    - export NOSE_COVER_PACKAGE=bob.db.cpqd
+    - ./bin/nosetests -sv
+  tags:
+    - beat-ubuntu-12.04
+
+py27-ubuntu-14.04:
+  script:
+    - git clean -ffdx
+    - python2.7 bootstrap-buildout.py
+    - ./bin/buildout
+    - ./bin/python --version
+    - export NOSE_WITH_COVERAGE=1
+    - export NOSE_COVER_PACKAGE=bob.db.cpqd
+    - ./bin/nosetests -sv
+  tags:
+    - beat-ubuntu-14.04
+
+py27-macosx:
+  script:
+    - git clean -ffdx
+    - python2.7 bootstrap-buildout.py
+    - ./bin/buildout
+    - ./bin/python --version
+    - export NOSE_WITH_COVERAGE=1
+    - export NOSE_COVER_PACKAGE=bob.db.cpqd
+    - ./bin/nosetests -sv
+  tags:
+    - beat-macosx
+
+py34-idiap:
+  script:
+    - git clean -ffdx
+    - export TMPDIR=/var/tmp
+    - python3.4 bootstrap-buildout.py
+    - ./bin/buildout
+    - unset TMPDIR
+    - ./bin/python --version
+    - export NOSE_WITH_COVERAGE=1
+    - export NOSE_COVER_PACKAGE=bob.db.cpqd
+    - ./bin/nosetests -sv
+  tags:
+    - lidiap2015
+
+py34-ubuntu-latest:
+  script:
+    - git clean -ffdx
+    - python3.4 bootstrap-buildout.py
+    - ./bin/buildout
+    - ./bin/python --version
+    - export NOSE_WITH_COVERAGE=1
+    - export NOSE_COVER_PACKAGE=bob.db.cpqd
+    - ./bin/nosetests -sv
+  tags:
+    - beat-ubuntu-latest
+
+py34-macosx:
+  script:
+    - git clean -ffdx
+    - python3.4 bootstrap-buildout.py
+    - ./bin/buildout
+    - ./bin/python --version
+    - export NOSE_WITH_COVERAGE=1
+    - export NOSE_COVER_PACKAGE=bob.db.cpqd
+    - ./bin/nosetests -sv
+  tags:
+    - beat-macosx
