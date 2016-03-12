@@ -29,6 +29,14 @@ class Database(bob.db.verification.filelist.Database):
     from pkg_resources import resource_filename
     lists = resource_filename(__name__, 'lists')
     bob.db.verification.filelist.Database.__init__(self, lists, original_directory = original_directory, original_extension = original_extension, annotation_directory=annotation_directory, keep_read_lists_in_memory=False)
+    
+  
+  def protocols(self):
+    """
+    Possible protocols for the database.
+    TODO: It is hard-coded for the moment
+    """
+    return ["view2_1", "view2_2", "view2_3", "view2_4", "view2_5", "view2_6", "view2_7", "view2_8", "view2_9", "view2_10"]
 
 
   def tobjects(self, protocol=None, model_ids=None, groups=None):
