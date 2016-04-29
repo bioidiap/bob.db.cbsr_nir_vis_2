@@ -2,6 +2,17 @@
 .. Tiago de Freitas Pereira <tiago.pereira@idiap.ch>
 .. Thu Sep  4 11:35:05 CEST 2014
 
+
+.. image:: http://img.shields.io/badge/docs-stable-yellow.png
+   :target: http://pythonhosted.org/bob.db.cbsr_nir_vis_2/index.html
+.. image:: https://img.shields.io/badge/github-master-0000c0.png
+   :target: https://gitlab.idiap.ch/biometric/bob.db.cbsr_nir_vis_2/tree/master
+.. image:: http://img.shields.io/pypi/v/bob.db.cbsr_nir_vis_2.png
+   :target: https://pypi.python.org/pypi/bob.db.cbsr_nir_vis_2
+.. image:: https://img.shields.io/badge/original-data--files-a000a0.png
+   :target: http://www.cbsr.ia.ac.cn/english/NIR-VIS-2.0-Database.html
+
+
 =================================
  CASIA NIR-VIS 2.0 Face Database
 =================================
