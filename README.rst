@@ -75,5 +75,5 @@ lines::
   eggs = bob.db.cbsr_nir_vis_2
 
   [sources]
-  bob.db.cbsr_nir_vis_2 = git https://github.com/bioidiap/bob.db.cbsr_nir_vis_2.git
+  bob.db.cbsr_nir_vis_2 = git https://gitlab.idiap.ch/biometric/bob.db.cbsr_nir_vis_2.git
   ...
