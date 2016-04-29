@@ -63,7 +63,7 @@ import time
 copyright = u'%s, Idiap Research Institute' % time.strftime('%Y')
 
 # Grab the setup entry
-distribution = pkg_resources.require('bob.db.cbsr_nir_vis_0')[0]
+distribution = pkg_resources.require('bob.db.cbsr_nir_vis_2')[0]
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

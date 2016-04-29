@@ -33,7 +33,7 @@ setup(
     version=version,
     description='CASIA NIR-VIS 2.0 Face Database protocol',
     url='https://gitlab.idiap.ch/biometric/bob.db.cbsr_nir_vis_2',
-    license='GPLv3',
+    license='BSD',
     keywords = "",
     author='Tiago de Freitas Pereira',
     author_email='tiago.pereira@idiap.ch',
@@ -53,9 +53,9 @@ setup(
 
     classifiers = [
       'Framework :: Bob',
-      'Development Status :: 4 - Beta',
+      'Development Status :: 5 - Production/Stable',
       'Intended Audience :: Education',
-      'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+      'License :: OSI Approved :: BSD License',
       'Natural Language :: English',
       'Programming Language :: Python',
       'Programming Language :: Python :: 3',
