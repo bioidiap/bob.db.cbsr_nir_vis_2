@@ -49,7 +49,14 @@ setup(
       'bob.db': [
         'cbsr_nir_vis_2 = bob.db.cbsr_nir_vis_2.driver:Interface',
       ],
+      
+      # scripts should be declared using this entry:
+      'console_scripts' : [
+        'evaluate_cbsr_nir_vis_2.py = bob.db.cbsr_nir_vis_2.scripts.evaluate_cbsr_nir_vis2:main',
+      ],
     },
+    
+    
 
     classifiers = [
       'Framework :: Bob',
