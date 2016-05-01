@@ -9,8 +9,8 @@
    :target: https://gitlab.idiap.ch/biometric/bob.db.cbsr_nir_vis_2/tree/master
 .. image:: http://img.shields.io/pypi/v/bob.db.cbsr_nir_vis_2.png
    :target: https://pypi.python.org/pypi/bob.db.cbsr_nir_vis_2
-.. image:: https://gitlab.idiap.ch/ci/projects/:id/status.png?ref=master
-   :target: https://gitlab.idiap.ch/ci/projects/:id?ref=master
+.. image:: https://gitlab.idiap.ch/ci/projects/651/status.png?ref=master
+   :target: https://gitlab.idiap.ch/ci/projects/651?ref=master
 .. image:: https://img.shields.io/badge/original-data--files-a000a0.png
    :target: http://www.cbsr.ia.ac.cn/english/NIR-VIS-2.0-Database.html
 
