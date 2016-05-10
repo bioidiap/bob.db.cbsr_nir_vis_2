@@ -48,7 +48,7 @@ setup(
     entry_points = {
       'bob.db': [
         'cbsr_nir_vis_2 = bob.db.cbsr_nir_vis_2.driver:Interface',
-      ],
+      ], 
       
       # scripts should be declared using this entry:
       'console_scripts' : [
