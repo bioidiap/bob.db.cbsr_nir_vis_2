@@ -28,7 +28,7 @@ def test_protocols():
   import os
 
   db = bob.db.cbsr_nir_vis_2.Database()
-  available_protocols = os.listdir(db.get_base_directory())
+  available_protocols = db.protocols()
 
   for p in possible_protocols:
     assert p  in available_protocols
@@ -36,14 +36,14 @@ def test_protocols():
 
 def test_clients():
   db = bob.db.cbsr_nir_vis_2.Database()
-
+  
   for p in possible_protocols:
-
+ 
     #Checking clients
-    assert len(db.client_ids(protocol=p)) == 715
-    assert len(db.client_ids(protocol=p, groups="world")) == 357
-    assert len(db.client_ids(protocol=p, groups="dev")) == 358
-    assert len(db.client_ids(protocol=p, groups="eval")) == 358
+    assert len(db.clients(protocol=p)) == 715
+    assert len(db.clients(protocol=p, groups="world")) == 357
+    assert len(db.clients(protocol=p, groups="dev")) == 358
+    assert len(db.clients(protocol=p, groups="eval")) == 358
 
 
 def test_objects():
@@ -54,7 +54,7 @@ def test_objects():
   assert len(db.groups(protocol=p)) == 3
 
   #cheking files
-  assert len(db.objects(protocol=p))== 15371
+  assert len(db.objects(protocol=p))== 8750+6481+6566
   assert len(db.objects(protocol=p, groups="world"))== 8750
   assert len(db.objects(protocol=p, groups="dev"))== 6481
   assert len(db.objects(protocol=p, groups="eval"))== 6566
@@ -71,7 +71,7 @@ def test_objects():
   assert len(db.groups(protocol=p)) == 3
 
   #cheking files 
-  assert len(db.objects(protocol=p))== 15387
+  assert len(db.objects(protocol=p))== 8750+6481+6590
   assert len(db.objects(protocol=p, groups="world"))== 8750
   assert len(db.objects(protocol=p, groups="dev"))== 6481
   assert len(db.objects(protocol=p, groups="eval"))== 6590
@@ -88,7 +88,7 @@ def test_objects():
   assert len(db.groups(protocol=p)) == 3
 
   #cheking files 
-  assert len(db.objects(protocol=p))== 15384
+  assert len(db.objects(protocol=p))== 8750+6481+6568
   assert len(db.objects(protocol=p, groups="world"))== 8750
   assert len(db.objects(protocol=p, groups="dev"))== 6481
   assert len(db.objects(protocol=p, groups="eval"))== 6568
@@ -105,7 +105,7 @@ def test_objects():
   assert len(db.groups(protocol=p)) == 3
 
   #cheking files 
-  assert len(db.objects(protocol=p))== 15379
+  assert len(db.objects(protocol=p))== 8750+6481+6413
   assert len(db.objects(protocol=p, groups="world"))== 8750
   assert len(db.objects(protocol=p, groups="dev"))== 6481
   assert len(db.objects(protocol=p, groups="eval"))== 6413
@@ -122,7 +122,7 @@ def test_objects():
   assert len(db.groups(protocol=p)) == 3
 
   #cheking files 
-  assert len(db.objects(protocol=p))== 15385
+  assert len(db.objects(protocol=p))== 8750+6481+6562
   assert len(db.objects(protocol=p, groups="world"))== 8750
   assert len(db.objects(protocol=p, groups="dev"))== 6481
   assert len(db.objects(protocol=p, groups="eval"))== 6562
@@ -139,7 +139,7 @@ def test_objects():
   assert len(db.groups(protocol=p)) == 3
 
   #cheking files 
-  assert len(db.objects(protocol=p))== 15383
+  assert len(db.objects(protocol=p))== 8750+6481+6549
   assert len(db.objects(protocol=p, groups="world"))== 8750
   assert len(db.objects(protocol=p, groups="dev"))== 6481
   assert len(db.objects(protocol=p, groups="eval"))== 6549
@@ -156,7 +156,7 @@ def test_objects():
   assert len(db.groups(protocol=p)) == 3
 
   #cheking files 
-  assert len(db.objects(protocol=p))== 15381
+  assert len(db.objects(protocol=p))== 8750+6481+6605
   assert len(db.objects(protocol=p, groups="world"))== 8750
   assert len(db.objects(protocol=p, groups="dev"))== 6481
   assert len(db.objects(protocol=p, groups="eval"))== 6605
@@ -173,7 +173,7 @@ def test_objects():
   assert len(db.groups(protocol=p)) == 3
 
   #cheking files 
-  assert len(db.objects(protocol=p))== 15383
+  assert len(db.objects(protocol=p))== 8750+6481+6580
   assert len(db.objects(protocol=p, groups="world"))== 8750
   assert len(db.objects(protocol=p, groups="dev"))== 6481
   assert len(db.objects(protocol=p, groups="eval"))== 6580
@@ -190,7 +190,7 @@ def test_objects():
   assert len(db.groups(protocol=p)) == 3
 
   #cheking files 
-  assert len(db.objects(protocol=p))== 15388
+  assert len(db.objects(protocol=p))== 8750+6481+6520
   assert len(db.objects(protocol=p, groups="world"))== 8750
   assert len(db.objects(protocol=p, groups="dev"))== 6481
   assert len(db.objects(protocol=p, groups="eval"))== 6520
@@ -208,7 +208,7 @@ def test_objects():
   assert len(db.groups(protocol=p)) == 3
 
   #cheking files 
-  assert len(db.objects(protocol=p))== 15389
+  assert len(db.objects(protocol=p))== 8750+6481+6603
   assert len(db.objects(protocol=p, groups="world"))== 8750
   assert len(db.objects(protocol=p, groups="dev"))== 6481
   assert len(db.objects(protocol=p, groups="eval"))== 6603
@@ -218,5 +218,3 @@ def test_objects():
 
   assert len(db.objects(protocol=p, groups="eval", purposes="enroll"))== 358
   assert len(db.objects(protocol=p, groups="eval", purposes="probe"))== 6245
-
-

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # vim: set fileencoding=utf-8 :
 # Tiago de Freitas Pereira <tiago.pereira@idiap.ch>
-# Thu Oct 09 11:27:27 CEST 2014
+# Tue Aug 14 14:28:00 CEST 2015
 #
 # Copyright (C) 2012-2014 Idiap Research Institute, Martigny, Switzerland
 #
@@ -17,34 +17,201 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import bob.db.verification.filelist
+import os
+import six
+from bob.db.base import utils
+from .models import *
+from .models import PROTOCOLS, GROUPS, PURPOSES
 
-class Database(bob.db.verification.filelist.Database):
-  """Wrapper class for the CASIA NIR-VIS 2.0 database for face recognition recognition (http://www.cbsr.ia.ac.cn/english/NIR-VIS-2.0-Database.html).
-  this class defines a simple protocol for training, dev and and by splitting the audio files of the database in three main parts.
-  """
+from .driver import Interface
 
-  def __init__(self, original_directory = None, original_extension = None, annotation_directory=None):
-    # call base class constructor
-    from pkg_resources import resource_filename
-    lists = resource_filename(__name__, 'lists')
-    bob.db.verification.filelist.Database.__init__(self, lists, original_directory = original_directory, original_extension = original_extension, annotation_directory=annotation_directory, keep_read_lists_in_memory=False)
-    
+SQLITE_FILE = Interface().files()[0]
+
+class Database(bob.db.base.SQLiteDatabase):
+
+  """Wrapper class for the CBSR NIR VIS 2 Dataset"""
+  def __init__(self, original_directory = None, original_extension = None):
+    # call base class constructors to open a session to the database
+
+    super(Database, self).__init__(SQLITE_FILE, File)
+    self.original_directory = original_directory
+    self.original_extension = original_extension
+
   
   def protocols(self):
-    """
-    Possible protocols for the database.
-    TODO: It is hard-coded for the moment
-    """
-    return ["view2_1", "view2_2", "view2_3", "view2_4", "view2_5", "view2_6", "view2_7", "view2_8", "view2_9", "view2_10"]
+    return PROTOCOLS
+
+  def purposes(self):
+    return PURPOSES
 
 
-  def tobjects(self, protocol=None, model_ids=None, groups=None):
-    #No TObjects    
-    return []
+  def annotations(self, file, annotation_type="eyes_center"):
+    """
+    This function returns the annotations for the given file id as a dictionary.
+    
+    **Parameters**
+    
+    file: :py:class:`bob.db.base.File`
+      The File object you want to retrieve the annotations for,
+
+    **Return**
+      A dictionary of annotations, for face images usually something like {'leye':(le_y,le_x), 'reye':(re_y,re_x), ...},
+      or None if there are no annotations for the given file ID (which is the case in this base class implementation).
+    """    
+    return file.annotations(annotation_type=annotation_type)
+
+
+  def objects(self, groups = None, protocol = None, purposes = None, model_ids = None, **kwargs):
+    """
+      This function returns lists of File objects, which fulfill the given restrictions.
+    """
+
+    #Checking inputs
+    groups    = self.check_parameters_for_validity(groups, "group", GROUPS)
+    protocols = self.check_parameters_for_validity(protocol, "protocol", PROTOCOLS)    
+    purposes  = self.check_parameters_for_validity(purposes, "purpose", PURPOSES)
+
+    #You need to select only one protocol
+    if (len(protocols) > 1):
+      raise ValueError("Please, select only one of the following protocols {0}".format(protocols))
+ 
+    #Querying
+    query = self.query(bob.db.cbsr_nir_vis_2.File, bob.db.cbsr_nir_vis_2.Protocol_File_Association).join(bob.db.cbsr_nir_vis_2.Protocol_File_Association).join(bob.db.cbsr_nir_vis_2.Client)
+
+    #filtering
+    query = query.filter(bob.db.cbsr_nir_vis_2.Protocol_File_Association.group.in_(groups))
+    query = query.filter(bob.db.cbsr_nir_vis_2.Protocol_File_Association.protocol.in_(protocols))
+    query = query.filter(bob.db.cbsr_nir_vis_2.Protocol_File_Association.purpose.in_(purposes))
+
+    if model_ids is not None and not "probe" in purposes :
+      if type(model_ids) is not list and type(model_ids) is not tuple:
+        model_ids = [model_ids]
+     
+      #if you provide a client object as input and not the ids    
+      if type(model_ids[0]) is bob.db.cbsr_nir_vis_2.Client:
+        model_aux = []
+        for m in model_ids:
+          model_aux.append(m.id)
+        model_ids = model_aux       
+
+      query = query.filter(bob.db.cbsr_nir_vis_2.Client.id.in_(model_ids))
+
+    raw_files = query.all()
+    files     = []
+    for f in raw_files:
+      f[0].group    = f[1].group
+      f[0].purpose  = f[1].purpose
+      f[0].protocol = f[1].protocol
+      files.append(f[0])
+
+    return files
+
+
+
+  def get_client_by_id(self, client_id):
+    """
+    Get the client object from its ID
+    """    
+
+    query = self.query(bob.db.cbsr_nir_vis_2.Client).filter(bob.db.cbsr_nir_vis_2.Client.id == client_id)
+    assert len(query.all())==1
+    return query.all()[0]
+
+    
+
+  def model_ids(self, protocol=None, groups=None):
+
+    #Checking inputs
+    groups    = self.check_parameters_for_validity(groups, "group", GROUPS)
+    protocols = self.check_parameters_for_validity(protocol, "protocol", PROTOCOLS) 
+
+    #You need to select only one protocol
+    if (len(protocols) > 1):
+      raise ValueError("Please, select only one of the following protocols {0}".format(protocols))
+ 
+    #Querying
+    query = self.query(bob.db.cbsr_nir_vis_2.Client).join(bob.db.cbsr_nir_vis_2.File).join(bob.db.cbsr_nir_vis_2.Protocol_File_Association)
+
+    #filtering
+    query = query.filter(bob.db.cbsr_nir_vis_2.Protocol_File_Association.group.in_(groups))
+    query = query.filter(bob.db.cbsr_nir_vis_2.Protocol_File_Association.protocol.in_(protocols))
+
+    return [c.id for c in query.all()]
+
+
+  def groups(self, protocol = None, **kwargs):
+    """This function returns the list of groups for this database."""
+    return GROUPS
+
+
+
+  def clients(self, protocol=None, groups=None):
+
+    #Checking inputs
+    groups    = self.check_parameters_for_validity(groups, "group", GROUPS)
+    protocols = self.check_parameters_for_validity(protocol, "protocol", PROTOCOLS) 
+
+    #You need to select only one protocol
+    if (len(protocols) > 1):
+      raise ValueError("Please, select only one of the following protocols {0}".format(protocols))
+ 
+    #Querying
+    query = self.query(bob.db.cbsr_nir_vis_2.Client).join(bob.db.cbsr_nir_vis_2.File).join(bob.db.cbsr_nir_vis_2.Protocol_File_Association)
+
+    #filtering
+    query = query.filter(bob.db.cbsr_nir_vis_2.Protocol_File_Association.group.in_(groups))
+    query = query.filter(bob.db.cbsr_nir_vis_2.Protocol_File_Association.protocol.in_(protocols))
+
+    return query.all()
+
+
+
+  ####### score normalization methods
+
+  def zclients(self, protocol=None):
+    """Returns a set of Z-Norm clients for the specific query by the user."""    
+    return self.clients(protocol=protocol, groups="world")
+
+  def tclients(self, protocol=None):
+    """Returns a set of T-Norm clients for the specific query by the user."""    
+    return self.zclients(protocol=protocol)
 
 
   def zobjects(self, protocol=None, groups=None):
-    #No TObjects    
-    return []
+    """Returns a set of Z-Norm objects for the specific query by the user.""" 
+
+    #Checking inputs
+    protocols = self.check_parameters_for_validity(protocol, "protocol", PROTOCOLS) 
+
+    #You need to select only one protocol
+    if (len(protocols) > 1):
+      raise ValueError("Please, select only one of the following protocols {0}".format(protocols))
+ 
+    #Querying
+    query = self.query(bob.db.cbsr_nir_vis_2.File).join(bob.db.cbsr_nir_vis_2.Protocol_File_Association)
+
+    #filtering
+    query = query.filter(bob.db.cbsr_nir_vis_2.Protocol_File_Association.protocol.in_(protocols))
+    query = query.filter(bob.db.cbsr_nir_vis_2.Protocol_File_Association.group == "world")
+    
+    ###### THE MOST IMPORTANT THING IN THE METHOD
+    ### IF THE PROTOCOL IS   PHOTO --> SKETCH, THE T-OBJECTS ARE PHOTOS
+    ### IF THE PROTOCOL IS   SKETCH --> PHOTO, THE T-OBJECTS ARE SKETCHES 
+    if "p2s" in protocol:
+      query = query.filter(bob.db.cbsr_nir_vis_2.File.modality == "VIS")
+    else:
+      query = query.filter(bob.db.cbsr_nir_vis_2.File.modality == "NIR")
+
+    return query.all()
+
+
+  def tobjects(self, protocol=None, model_ids=None, groups=None):
+    """Returns a set of T-Norm objects for the specific query by the user.""" 
+    return self.zobjects(protocol=protocol)
+
+
+
+  def tmodel_ids(self, groups = None, protocol = None, **kwargs):
+    """This function returns the ids of the T-Norm models of the given groups for the given protocol."""
+    return ["t_"+str(c.id) for c in self.tclients(protocol=protocol)]
 

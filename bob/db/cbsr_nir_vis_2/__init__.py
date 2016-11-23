@@ -23,7 +23,7 @@ http://www.voxforge.org/
 """
 
 from .query import Database
-from bob.db.verification.filelist.models import File, Client
+from bob.db.cbsr_nir_vis_2.models import File, Client, Annotation, Protocol_File_Association
 
 def get_config():
   """Returns a string containing the configuration information.
