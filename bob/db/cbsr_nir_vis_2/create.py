@@ -120,7 +120,8 @@ def add_annotations(session, file_id, annotation_filename, verbose = True):
   """Adds the Files"""
   annotations = open(annotation_filename).readlines()[0].rstrip("\n").split(" ")
   if verbose>=1: print("  Adding annotation {0}".format(annotation_filename))
-  session.add(Annotation(file_id = file_id, re_x=annotations[2], re_y=annotations[3], le_x=annotations[0], le_y=annotations[1] ))
+  #session.add(Annotation(file_id = file_id, re_x=annotations[2], re_y=annotations[3], le_x=annotations[0], le_y=annotations[1] ))
+  session.add(Annotation(file_id = file_id, re_x=annotations[0], re_y=annotations[1], le_x=annotations[2], le_y=annotations[3] ))
 
 
 def add_protocols(session, protocol_file, file_paths, protocol, group, purpose, verbose = True):
