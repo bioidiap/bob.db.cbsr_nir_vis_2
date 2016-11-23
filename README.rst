@@ -2,17 +2,20 @@
 .. Tiago de Freitas Pereira <tiago.pereira@idiap.ch>
 .. Thu Sep  4 11:35:05 CEST 2014
 
-
 .. image:: http://img.shields.io/badge/docs-stable-yellow.png
    :target: http://pythonhosted.org/bob.db.cbsr_nir_vis_2/index.html
-.. image:: https://img.shields.io/badge/github-master-0000c0.png
-   :target: https://gitlab.idiap.ch/biometric/bob.db.cbsr_nir_vis_2/tree/master
+.. image:: http://img.shields.io/badge/docs-latest-orange.png
+   :target: https://www.idiap.ch/software/bob/docs/latest/bob/bob.db.cbsr_nir_vis_2/master/index.html
+.. image:: https://gitlab.idiap.ch/bob/bob.db.cbsr_nir_vis_2/badges/master/build.svg
+   :target: https://gitlab.idiap.ch/bob/bob.db.cbsr_nir_vis_2/commits/master
+.. image:: https://img.shields.io/badge/gitlab-project-0000c0.svg
+   :target: https://gitlab.idiap.ch/bob/bob.db.cbsr_nir_vis_2
 .. image:: http://img.shields.io/pypi/v/bob.db.cbsr_nir_vis_2.png
+   :target: https://pypi.python.org/pypi/bob.db.cbsr_nir_vis_2
+.. image:: http://img.shields.io/pypi/dm/bob.db.cbsr_nir_vis_2.png
    :target: https://pypi.python.org/pypi/bob.db.cbsr_nir_vis_2
 .. image:: https://img.shields.io/badge/original-data--files-a000a0.png
    :target: http://www.cbsr.ia.ac.cn/english/NIR-VIS-2.0-Database.html
-.. image:: https://gitlab.idiap.ch/biometric/bob.db.cbsr_nir_vis_2/badges/master/build.svg?
-   :target: https://gitlab.idiap.ch/biometric/bob.db.cbsr_nir_vis_2/commits/master
 
 =================================
  CASIA NIR-VIS 2.0 Face Database
@@ -32,60 +35,24 @@ to the `HFB database <http://www.cbsr.ia.ac.cn/english/HFB%20Databases.asp>`_.
 The CASIA NIR-VIS 2.0 database consists of 725 subjects in total. There are
 1-22 VIS and 5-50 NIR face images per subject.
 
-You would normally not install this package unless you are maintaining it. What
-you would do instead is to tie it in at the package you need to **use** it.
-There are a few ways to achieve this:
+Installation
+------------
 
-1. You can add this package as a requirement at the ``setup.py`` for your own
-   `satellite package
-   <https://github.com/idiap/bob/wiki/Virtual-Work-Environments-with-Buildout>`_
-   or to your Buildout ``.cfg`` file, if you prefer it that way. With this
-   method, this package gets automatically downloaded and installed on your
-   working environment, or
+Follow our `installation`_ instructions. Then, using the Python interpreter
+provided by the distribution, bootstrap and buildout this package::
 
-2. You can manually download and install this package using commands like
-   ``easy_install`` or ``pip``.
+  $ python bootstrap-buildout.py
+  $ ./bin/buildout
 
-The package is available in two different distribution formats:
 
-1. You can download it from `PyPI <http://pypi.python.org/pypi>`_, or
+Contact
+-------
 
-2. You can download it in its source form from `its git repository
-   <https://github.com/bioidiap/bob.db.cbsr_nir_vis_2>`_.
+For questions or reporting issues to this software package, contact our
+development `mailing list`_.
 
-You can mix and match points 1/2 above based on your requirements. Here are
-some examples:
 
-Modify your setup.py and download from PyPI
-===========================================
-
-That is the easiest. Edit your ``setup.py`` in your satellite package and add
-the following entry in the ``install_requires`` section (note: ``...`` means
-`whatever extra stuff you may have in-between`, don't put that on your
-script)::
-
-    install_requires=[
-      ...
-      "bob.db.cbsr_nir_vis_2",
-    ],
-
-Proceed normally with your ``boostrap/buildout`` steps and you should be all
-set. That means you can now import the ``bob.db.cbsr_nir_vis_2`` namespace into your scripts.
-
-Modify your buildout.cfg and download from git
-==============================================
-
-You will need to add a dependence to `mr.developer
-<http://pypi.python.org/pypi/mr.developer/>`_ to be able to install from our
-git repositories. Your ``buildout.cfg`` file should contain the following
-lines::
-
-  [buildout]
-  ...
-  extensions = mr.developer
-  auto-checkout = *
-  eggs = bob.db.cbsr_nir_vis_2
-
-  [sources]
-  bob.db.cbsr_nir_vis_2 = git https://gitlab.idiap.ch/biometric/bob.db.cbsr_nir_vis_2.git
-  ...
+.. Place your references here:
+.. _bob: https://www.idiap.ch/software/bob
+.. _installation: https://gitlab.idiap.ch/bob/bob/wikis/Installation
+.. _mailing list: https://groups.google.com/forum/?fromgroups#!forum/bob-devel

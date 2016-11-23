@@ -1,2 +1,2 @@
 setuptools
-bob.db.verification.filelist
+bob.db.base

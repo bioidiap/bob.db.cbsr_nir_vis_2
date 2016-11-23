@@ -13,7 +13,7 @@ The actual raw data for the database should be downloaded from the original URL.
 The Database Interface
 ----------------------
 
-The :py:class:`bob.db.cbsr_nir_vis_2.Database` complies with the standard biometric verification database as described in :ref:`commons`, implementing both interfaces :py:class:`https://github.com/bioidiap/bob.db.verification.filelist`.
+The :py:class:`bob.db.cbsr_nir_vis_2.Database` complies with the standard biometric verification database as described in `bob.db.base <bob.db.base>`_, implementing the interface :py:class:`bob.db.base.SQLiteDatabase`.
 
 
 CASIA Protocols
