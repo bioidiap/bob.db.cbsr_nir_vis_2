@@ -109,7 +109,7 @@ class File(Base,  bob.db.base.File):
 
   id        = Column(Integer, primary_key=True)
   path      = Column(String(100), unique=True)
-  client_id = Column(Integer, ForeignKey('client.id'))
+  client_id = Column(String(10), ForeignKey('client.id'))
   modality  = Column(Enum(*modality_choices))
   session   = Column(Integer)
 

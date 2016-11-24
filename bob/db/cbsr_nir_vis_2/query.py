@@ -115,7 +115,7 @@ class Database(bob.db.base.SQLiteDatabase):
 
     query = self.query(bob.db.cbsr_nir_vis_2.Client).filter(bob.db.cbsr_nir_vis_2.Client.id == client_id)
     assert len(query.all())==1
-    return query.all()[0]
+    return str(query.all()[0])
 
     
 
@@ -136,7 +136,7 @@ class Database(bob.db.base.SQLiteDatabase):
     query = query.filter(bob.db.cbsr_nir_vis_2.Protocol_File_Association.group.in_(groups))
     query = query.filter(bob.db.cbsr_nir_vis_2.Protocol_File_Association.protocol.in_(protocols))
 
-    return [c.id for c in query.all()]
+    return [str(c.id) for c in query.all()]
 
 
   def groups(self, protocol = None, **kwargs):
