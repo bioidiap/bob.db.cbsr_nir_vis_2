@@ -12,8 +12,6 @@
    :target: https://gitlab.idiap.ch/bob/bob.db.cbsr_nir_vis_2
 .. image:: http://img.shields.io/pypi/v/bob.db.cbsr_nir_vis_2.png
    :target: https://pypi.python.org/pypi/bob.db.cbsr_nir_vis_2
-.. image:: http://img.shields.io/pypi/dm/bob.db.cbsr_nir_vis_2.png
-   :target: https://pypi.python.org/pypi/bob.db.cbsr_nir_vis_2
 .. image:: https://img.shields.io/badge/original-data--files-a000a0.png
    :target: http://www.cbsr.ia.ac.cn/english/NIR-VIS-2.0-Database.html
 
