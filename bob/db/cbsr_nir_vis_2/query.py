@@ -35,9 +35,20 @@ class Database(bob.db.base.SQLiteDatabase):
 
     super(Database, self).__init__(SQLITE_FILE, File, original_directory, original_extension)
 
+
+  @property
+  def modality_separator(self):
+      return "VIS"
+
+
+  @property
+  def modalities(self):
+      return ['VIS', 'NIR']
   
+
   def protocols(self):
     return PROTOCOLS
+
 
   def purposes(self):
     return PURPOSES
