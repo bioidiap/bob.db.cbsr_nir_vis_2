@@ -56,6 +56,11 @@ def test_objects():
   #cheking files
   assert len(db.objects(protocol=p))== 8750+6481+6566
   assert len(db.objects(protocol=p, groups="world"))== 8750
+
+  # Checking the modalities
+  assert len(db.objects(protocol=p, groups="world", modality=["VIS"])) == 2480
+  assert len(db.objects(protocol=p, groups="world", modality=["NIR"])) == 6270
+  
   assert len(db.objects(protocol=p, groups="dev"))== 6481
   assert len(db.objects(protocol=p, groups="eval"))== 6566
 
@@ -73,6 +78,10 @@ def test_objects():
   #cheking files 
   assert len(db.objects(protocol=p))== 8750+6481+6590
   assert len(db.objects(protocol=p, groups="world"))== 8750
+
+  assert len(db.objects(protocol=p, groups="world", modality=["VIS"])) == 2480
+  assert len(db.objects(protocol=p, groups="world", modality=["NIR"])) == 6270
+  
   assert len(db.objects(protocol=p, groups="dev"))== 6481
   assert len(db.objects(protocol=p, groups="eval"))== 6590
 

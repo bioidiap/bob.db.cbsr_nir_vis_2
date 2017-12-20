@@ -70,7 +70,7 @@ class Database(bob.db.base.SQLiteDatabase):
     return file.annotations(annotation_type=annotation_type)
 
 
-  def objects(self, groups = None, protocol = None, purposes = None, model_ids = None, **kwargs):
+  def objects(self, groups = None, protocol = None, purposes = None, model_ids = None, modality=None, **kwargs):
     """
       This function returns lists of File objects, which fulfill the given restrictions.
     """
@@ -79,6 +79,9 @@ class Database(bob.db.base.SQLiteDatabase):
     groups    = self.check_parameters_for_validity(groups, "group", GROUPS)
     protocols = self.check_parameters_for_validity(protocol, "protocol", PROTOCOLS)    
     purposes  = self.check_parameters_for_validity(purposes, "purpose", PURPOSES)
+    modality = self.check_parameters_for_validity(
+        modality, "modality", self.modalities)
+
 
     #You need to select only one protocol
     if (len(protocols) > 1):
@@ -91,6 +94,9 @@ class Database(bob.db.base.SQLiteDatabase):
     query = query.filter(bob.db.cbsr_nir_vis_2.Protocol_File_Association.group.in_(groups))
     query = query.filter(bob.db.cbsr_nir_vis_2.Protocol_File_Association.protocol.in_(protocols))
     query = query.filter(bob.db.cbsr_nir_vis_2.Protocol_File_Association.purpose.in_(purposes))
+    query = query.filter(
+        bob.db.cbsr_nir_vis_2.File.modality.in_(modality))
+    
 
     if model_ids is not None and not "probe" in purposes :
       if type(model_ids) is not list and type(model_ids) is not tuple:
