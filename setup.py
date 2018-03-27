@@ -52,7 +52,6 @@ setup(
       
       # scripts should be declared using this entry:
       'console_scripts' : [
-        'evaluate_cbsr_nir_vis_2.py = bob.db.cbsr_nir_vis_2.scripts.evaluate_cbsr_nir_vis2:main',
       ],
     },
     
