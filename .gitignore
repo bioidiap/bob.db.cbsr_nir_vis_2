@@ -19,3 +19,4 @@ sphinx
 .settings
 *.egg-info
 .mr.developer.cfg
+*.sql3
