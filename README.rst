@@ -36,11 +36,9 @@ The CASIA NIR-VIS 2.0 database consists of 725 subjects in total. There are
 Installation
 ------------
 
-Follow our `installation`_ instructions. Then, using the Python interpreter
-provided by the distribution, bootstrap and buildout this package::
-
-  $ python bootstrap-buildout.py
-  $ ./bin/buildout
+Follow our `installation`_ instructions. Then, to install this package, run::
+   
+   $ conda install bob.db.cbsr_nir_vis_2
 
 
 Contact
