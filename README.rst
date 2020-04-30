@@ -2,18 +2,14 @@
 .. Tiago de Freitas Pereira <tiago.pereira@idiap.ch>
 .. Thu Sep  4 11:35:05 CEST 2014
 
-.. image:: http://img.shields.io/badge/docs-stable-yellow.png
-   :target: https://www.idiap.ch/software/bob/docs/bob/bob.db.cbsr_nir_vis_2/stable/index.html
-.. image:: http://img.shields.io/badge/docs-latest-orange.png
+.. image:: https://img.shields.io/badge/docs-available-orage.svg
    :target: https://www.idiap.ch/software/bob/docs/bob/bob.db.cbsr_nir_vis_2/master/index.html
-.. image:: https://gitlab.idiap.ch/bob/bob.db.cbsr_nir_vis_2/badges/master/build.svg
+.. image:: https://gitlab.idiap.ch/bob/bob.db.cbsr_nir_vis_2/badges/master/pipeline.svg
+   :target: https://gitlab.idiap.ch/bob/bob.db.cbsr_nir_vis_2/commits/master
+.. image:: https://gitlab.idiap.ch/bob/bob.db.cbsr_nir_vis_2/badges/master/coverage.svg
    :target: https://gitlab.idiap.ch/bob/bob.db.cbsr_nir_vis_2/commits/master
 .. image:: https://img.shields.io/badge/gitlab-project-0000c0.svg
    :target: https://gitlab.idiap.ch/bob/bob.db.cbsr_nir_vis_2
-.. image:: http://img.shields.io/pypi/v/bob.db.cbsr_nir_vis_2.png
-   :target: https://pypi.python.org/pypi/bob.db.cbsr_nir_vis_2
-.. image:: https://img.shields.io/badge/original-data--files-a000a0.png
-   :target: http://www.cbsr.ia.ac.cn/english/NIR-VIS-2.0-Database.html
 
 =================================
  CASIA NIR-VIS 2.0 Face Database
